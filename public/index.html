@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributeur Automatique - Interface Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-shopping-cart"></i> Distributeur Automatique</h1>
+            <div class="balance-display">
+                <span class="balance-label">Solde inséré:</span>
+                <span class="balance-amount" id="balance">0.00 MAD</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Coin Insertion Section -->
+            <section class="coin-section">
+                <h2><i class="fas fa-coins"></i> Insérer des pièces</h2>
+                <div class="coin-buttons">
+                    <button class="coin-btn" data-value="0.5">0.5 MAD</button>
+                    <button class="coin-btn" data-value="1">1 MAD</button>
+                    <button class="coin-btn" data-value="2">2 MAD</button>
+                    <button class="coin-btn" data-value="5">5 MAD</button>
+                    <button class="coin-btn" data-value="10">10 MAD</button>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="products-section">
+                <h2><i class="fas fa-box"></i> Produits disponibles</h2>
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </section>
+
+            <!-- Cart Section -->
+            <section class="cart-section">
+                <h2><i class="fas fa-shopping-basket"></i> Panier</h2>
+                <div class="cart-content">
+                    <div class="cart-items" id="cart-items">
+                        <p class="empty-cart">Votre panier est vide</p>
+                    </div>
+                    <div class="cart-summary">
+                        <div class="cart-total">
+                            <span>Total: <span id="cart-total">0.00 MAD</span></span>
+                        </div>
+                        <div class="cart-actions">
+                            <button class="btn btn-danger" id="cancel-btn" disabled>
+                                <i class="fas fa-times"></i> Annuler
+                            </button>
+                            <button class="btn btn-success" id="purchase-btn" disabled>
+                                <i class="fas fa-credit-card"></i> Acheter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Admin Section -->
+        <aside class="admin-section">
+            <h3><i class="fas fa-cog"></i> Administration</h3>
+            <button class="btn btn-warning" id="reset-btn">
+                <i class="fas fa-redo"></i> Réinitialiser
+            </button>
+        </aside>
+    </div>
+
+    <!-- Notification System -->
+    <div class="notification-container" id="notification-container"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Purchase Modal -->
+    <div class="modal-overlay" id="purchase-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> Achat réussi!</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Purchase details will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="modal-ok">D'accord</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

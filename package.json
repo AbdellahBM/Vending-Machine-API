@@ -1,0 +1,45 @@
+{
+  "name": "vending-machine-api",
+  "version": "1.0.0",
+  "description": "Automatic Vending Machine API for dispensing products and managing transactions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "web": "node start-web-interface.js",
+    "web:dev": "nodemon start-web-interface.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "vending-machine",
+    "api",
+    "node.js",
+    "express",
+    "web-interface"
+  ],
+  "author": "Abdellah BOUAAMOUD",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.10.0",
+    "open": "^8.4.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ]
+  }
+}
