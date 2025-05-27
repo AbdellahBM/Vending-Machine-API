@@ -14,6 +14,10 @@ yarn-error.log*
 # Test coverage
 coverage/
 
+# Documentation
+API_REFERENCE.md
+INTERFACE_WEB_GUIDE.md
+
 # Runtime data
 pids
 *.pid
